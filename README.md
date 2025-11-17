@@ -63,12 +63,6 @@ GOOGLE_API_KEY=""  # Optional: for direct API access
 
 3. Ensure your project has the necessary permissions for Vertex AI and Gemini models
 
-### Customer Profiles
-
-Sample customer profiles are located in `card_services_agent/profiles/`:
-- `sample_customer.json` - Example customer with data
-- `empty_customer.json` - Template for new customers
-
 ## Usage
 
 ### Running the Agent Locally
@@ -78,10 +72,24 @@ Start the ADK web interface:
 adk web
 ```
 
-This launches an interactive interface where you can:
-- Test the agent with different customer requests
-- View agent reasoning and sub-agent delegation
-- See structured JSON responses
+### Running the Agent locally, exposed as a Remote Agent (A2A)  
+
+Start the remote agent using uvicorn:
+```bash
+uvicorn card_services_agent.agent:a2a_app --host localhost --port 8001
+```
+
+Check that the agent is running:
+```
+http://localhost:8001/.well-known/agent-card.json
+```
+
+### Deploy Agent
+
+```
+gcloud auth login
+make deploy
+```
 
 ### Example Interactions
 
@@ -104,3 +112,4 @@ The root agent will:
 
 * [ADK Agent ](https://google.github.io/adk-docs/get-started/python/)
 * [Exposing an agent through A2A](https://google.github.io/adk-docs/a2a/quickstart-exposing/)
+* [A2A Agent Example](https://github.com/google/adk-python/tree/main/contributing/samples/a2a_root)

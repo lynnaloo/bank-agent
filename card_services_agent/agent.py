@@ -19,18 +19,5 @@ root_agent = Agent(
     #before_agent_callback=_load_customer
 )
 
-# Define A2A agent card
-# my_agent_card = AgentCard(
-#     "name": "card_services_agent",
-#     "url": "http://example.com",
-#     "description": "Test agent from file",
-#     "version": "1.0.0",
-#     "capabilities": {},
-#     "skills": [],
-#     "defaultInputModes": ["text/plain"],
-#     "defaultOutputModes": ["text/plain"],
-#     "supportsAuthenticatedExtendedCard": False,
-# )
-
 # Make your agent A2A-compatible
 a2a_app = to_a2a(root_agent, port=8001)
