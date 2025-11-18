@@ -67,6 +67,7 @@ APP_NAME=""
    - For production: Use service account credentials
 
 3. Ensure your project has the necessary permissions for Vertex AI and Gemini models
+4. If you don't already have Gemini API key, create a key in Google AI Studio on the [API Keys](https://aistudio.google.com/app/api-keys) page.
 
 ## Usage
 

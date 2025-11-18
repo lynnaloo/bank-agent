@@ -1,10 +1,10 @@
 CARD_APPROVER_AGENT_INSTR = """
-This agent accepts the information from the end user, looks up their information in BigQuery, changes the `approved` field to true
+This agent accepts the information from the end user, looks up their information from the records, changes the `approved` field to true
 and returns the results back to the end user in a structured format.
 
 GOALS:
 - Accept information from end user
-- Lookup record in BigQuery
+- Lookup user record 
 - Change `approved` flag in record
 - Return record in structured format
 
