@@ -34,7 +34,9 @@ cd bank-agent
 
 2. **Install dependencies**
 ```bash
-pip install -r requirements.txt
+pip install google-adk[a2a]
+pip install google-generativeai
+pip install google-cloud-aiplatform
 ```
 
 3. **Set up environment variables**
@@ -49,7 +51,10 @@ Edit `.env` with your credentials:
 GOOGLE_GENAI_USE_VERTEXAI=1
 GOOGLE_CLOUD_PROJECT=your-project-id
 GOOGLE_CLOUD_LOCATION=us-central1
-GOOGLE_API_KEY=""  # Optional: for direct API access
+GOOGLE_API_KEY=""  
+AGENT_PATH=""
+SERVICE_NAME=""
+APP_NAME=""
 ```
 
 ## Configuration
