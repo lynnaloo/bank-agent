@@ -92,9 +92,16 @@ http://localhost:8001/.well-known/agent-card.json
 
 ### Deploy Agent
 
-```
+```bash
 gcloud auth login
 make deploy
+```
+
+Once the Agent is deployed, set the `HOST_OVERRIDE` environment variable to the Cloud Run Service URL (without https://):
+```bash
+gcloud run services update SERVICE_NAME \
+  --region GOOGLE_CLOUD_LOCATION \
+  --set-env-vars=HOST_OVERRIDE=SERVICE_URL
 ```
 
 ### Example Interactions
