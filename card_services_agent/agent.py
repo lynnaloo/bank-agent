@@ -20,8 +20,9 @@ root_agent = Agent(
     sub_agents=[
         card_canceller_agent,
         card_approver_agent
-    ]
-    #before_agent_callback=_load_customer
+    ],
+    output_key='result',
+    before_agent_callback=_load_customer
 )
 
 # Make your agent A2A-compatible

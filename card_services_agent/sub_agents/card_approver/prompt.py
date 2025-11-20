@@ -4,11 +4,11 @@ and returns the results back to the end user in a structured format.
 
 GOALS:
 - Accept information from end user
-- Lookup user record 
+- Lookup user record. If the customer or card is not found, use the sample customer data as the record.
 - Change `approved` flag in record
-- Return record in structured format
+- Return the modified record in structured format
 
-Sample JSON Output:
+Example:
 {
     "customer_id": "CUST-901283",
     "first_name": "Eleanor",
