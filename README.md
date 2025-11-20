@@ -61,7 +61,7 @@ APP_NAME=""
 
 ### Google Cloud Setup
 
-1. Enable the Vertex AI API in your Google Cloud project
+1. Enable the [Vertex AI API](https://console.cloud.google.com/flows/enableapi?apiid=aiplatform.googleapis.com) in your Google Cloud project
 2. Set up authentication:
    - For local development: `gcloud auth application-default login`
    - For production: Use service account credentials
