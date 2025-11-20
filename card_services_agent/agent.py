@@ -1,3 +1,4 @@
+import os
 from google.adk.agents import Agent
 from google.adk.a2a.utils.agent_to_a2a import to_a2a
 from a2a.types import AgentCard
@@ -6,6 +7,10 @@ from card_services_agent import prompt
 from card_services_agent.sub_agents.card_canceller.agent import card_canceller_agent
 from card_services_agent.sub_agents.card_approver.agent import card_approver_agent
 from card_services_agent.tools.memory import _load_customer
+
+# Get port and host from environment variables, with defaults
+port = int(os.getenv('PORT', '8001'))
+host = os.getenv('HOST_OVERRIDE', 'localhost')
 
 root_agent = Agent(
     model='gemini-2.5-flash',
@@ -20,4 +25,4 @@ root_agent = Agent(
 )
 
 # Make your agent A2A-compatible
-a2a_app = to_a2a(root_agent, port=8001)
+a2a_app = to_a2a(root_agent, port=port, host=host)

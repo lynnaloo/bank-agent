@@ -1,0 +1,10 @@
+# Google Agent Development Kit with A2A extras
+google-adk[a2a]
+
+# Google Generative AI
+google-generativeai
+
+# Google Cloud Vertex AI
+google-cloud-aiplatform
+
+gunicorn

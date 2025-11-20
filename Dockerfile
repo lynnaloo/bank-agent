@@ -17,8 +17,11 @@ RUN pip install --no-cache-dir \
     "google-generativeai>=0.8.0" \
     "google-cloud-aiplatform>=1.38.0"
 
-# Set permission
-COPY --chown=myuser:myuser "agents/card_services_agent" "/app/card_services_agent"
+# Copy the card_services_agent directory from the root of the build context
+COPY --chown=myuser:myuser ./card_services_agent /app/card_services_agent
+
+# Set PYTHONPATH so Python can find the module
+ENV PYTHONPATH=/app
 
 EXPOSE 8080
 
