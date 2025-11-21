@@ -1,10 +1,25 @@
 {
-    "customer_id": "",
-    "first_name": "",
-    "last_name": "",
-    "account_type": "",
-    "date_opened": "",
-    "cards": [
-        
-    ]
+    "state": 
+    [ {
+        "priority": "",
+        "source": "",
+        "customer_id": "",
+        "first_name": "",
+        "last_name": "",
+        "action": "",
+        "reason": "",
+        "cards": [
+            {
+                "date_opened": "",
+                "account_type": "",
+                "card_id": "",
+                "card_type": "",
+                "card_network": "",
+                "last_four_digits": "",
+                "is_approved": false,
+                "is_cancelled": false,
+                "expiry_date": ""
+            }
+        ]
+    } ]
 }

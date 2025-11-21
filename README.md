@@ -15,12 +15,12 @@ The Bank Card Services Agent is an intelligent system that processes credit card
 **Root Agent (`card_services_agent`)**
 - Main coordinator that welcomes users and understands their needs
 - Determines whether a card should be approved or cancelled based on user inputs
-- Delegates to the appropriate sub-agent
+- Calls the appropriate function
 - Returns results in a clear, structured format
 
-**Sub-Agents:**
-- **Card Approver Agent** - Updates customer records to mark cards as approved
-- **Card Canceller Agent** - Updates customer records to mark cards as cancelled
+**Tools:**
+- **Card Approver Function** - Updates customer records to mark cards as approved
+- **Card Canceller Function** - Updates customer records to mark cards as cancelled
 
 All agents use the `gemini-2.5-flash` model with optimized temperature and top_p settings for consistent, reliable responses.
 
