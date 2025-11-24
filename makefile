@@ -12,6 +12,7 @@ deploy:
 		--allow-unauthenticated \
 		--min-instances=1 \
 		--cpu-boost \
+		--no-cpu-throttling \
 		--execution-environment=gen2 \
 		--set-env-vars=GOOGLE_ENTRYPOINT=$(GOOGLE_ENTRYPOINT),GOOGLE_GENAI_USE_VERTEXAI=$(GOOGLE_GENAI_USE_VERTEXAI),SERVICE_NAME=$(SERVICE_NAME),GOOGLE_API_KEY=$(GOOGLE_API_KEY),GOOGLE_CLOUD_PROJECT=$(GOOGLE_CLOUD_PROJECT),GOOGLE_CLOUD_LOCATION=$(GOOGLE_CLOUD_LOCATION),LOG_LEVEL=DEBUG
 

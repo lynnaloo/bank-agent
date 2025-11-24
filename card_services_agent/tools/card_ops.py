@@ -13,28 +13,37 @@ logger = logging.getLogger(__name__)
 # Global cache to store customer data in memory
 _DATA_CACHE = None
 
-def _get_sample_data() -> Dict[str, Any]:
+def _load_sample_data() -> Dict[str, Any]:
     """Helper to load sample data."""
-    global _DATA_CACHE
-    if _DATA_CACHE is not None:
-        return _DATA_CACHE
-
     current_dir = os.path.dirname(os.path.abspath(__file__))
     profiles_dir = os.path.join(os.path.dirname(current_dir), 'profiles')
     sample_file = os.path.join(profiles_dir, 'sample_customer.json')
     
     try:
+        logger.info(f"Loading sample data from {sample_file}")
         with open(sample_file, 'r') as f:
             data = json.load(f)
             # Handle the structure seen in the file: {"state": [ {customer...} ]}
             if "state" in data and isinstance(data["state"], list) and len(data["state"]) > 0:
-                _DATA_CACHE = data["state"][0]
+                logger.info("Sample data loaded successfully")
+                return data["state"][0]
             else:
-                _DATA_CACHE = data
-            return _DATA_CACHE
+                logger.info("Sample data loaded successfully (flat structure)")
+                return data
     except Exception as e:
-        print(f"Error loading sample data: {e}")
+        logger.error(f"Error loading sample data: {e}")
         return {}
+
+# Load data at module level to avoid latency on first request
+_DATA_CACHE = _load_sample_data()
+
+def _get_sample_data() -> Dict[str, Any]:
+    """Helper to get cached sample data."""
+    global _DATA_CACHE
+    if not _DATA_CACHE:
+        logger.info("Cache empty, reloading data...")
+        _DATA_CACHE = _load_sample_data()
+    return _DATA_CACHE
 
 def approve_card() -> Dict[str, Any]:
     """

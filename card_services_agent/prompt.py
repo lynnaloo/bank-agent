@@ -15,27 +15,5 @@ GOALS:
 OUTPUT FORMAT:
 Your final response must be a JSON object with a single key "result" containing the updated record.
 Example:
-{
-  "result": [{
-    "priority": "high",
-    "source": "Salesforce Service Cloud",
-    "customer_id": "001Ka00004X5Hx5IAF",
-    "first_name": "Julie",
-    "last_name": "Morris",
-    "action": "Successfully cancelled",
-    "reason": "Stolen card",
-    "cards": [
-        {
-            "date_opened": "2018-05-20",
-            "account_type": "BankAmericard",
-            "card_id": "CARD-2876",
-            "card_type": "Credit",
-            "card_network": "Visa",
-            "last_four_digits": "2876",
-            "is_approved": true,
-            "is_cancelled": false,
-            "expiry_date": "2028-11-30"
-        }
-    ]}]
-}
+{"result":[{"priority":"high","source":"Salesforce Service Cloud","customer_id":"001Ka00004X5Hx5IAF","first_name":"Julie","last_name":"Morris","action":"Successfully cancelled","reason":"Stolen card","cards":[{"date_opened":"2018-05-20","account_type":"BankAmericard","card_id":"CARD-2876","card_type":"Credit","card_network":"Visa","last_four_digits":"2876","is_approved":true,"is_cancelled":false,"expiry_date":"2028-11-30"}]}]}
 """
